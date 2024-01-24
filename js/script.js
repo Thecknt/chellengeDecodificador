@@ -27,9 +27,8 @@ buttonCopy.addEventListener('click', (e)=>{
 })
 
 buttonDecrypt.addEventListener('click', (e)=>{
-    console.log(inputValue);
     assignTextToElement('h2',inputValue);
-    assignTextToElement('p',"Texto Decriptado!");
+    assignTextToElement('p',"Texto desencriptado!");
     cleanField();
 })
 
@@ -38,14 +37,11 @@ let cleanField = ()=>{
 }
 
 let captureMsg = ()=>{
-console.log("ingrese a la funcion");
     firstTextArea = document.getElementById('firstTextArea').value;
- 
-        console.log(firstTextArea);
+
         // Obtener el valor actual del textarea
         inputValue = firstTextArea;
 
-       console.log("Datos capturados: "+inputValue);
         words = inputValue.split(" ");
        
         if (words.length !== 0) {
@@ -60,7 +56,6 @@ console.log("ingrese a la funcion");
                              }           
             }
    
-           console.log("Nueva cadena: "+words);
             showEncriptedMsg(words);
             buttonCopy.style.display="flex";
        }
@@ -80,7 +75,4 @@ function showEncriptedMsg(words) {
         assignTextToElement('p',"");
 }
 
-function Encrypt() {
-    
-}
 
