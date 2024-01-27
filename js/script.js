@@ -6,6 +6,8 @@ let buttonDecrypt = document.getElementById('decrypt');
 let buttonCopy=document.getElementById('copy');
 let copyText="";
 let firstTextArea="";
+let specialCharacteres= "!@#$%^&*()";
+let upperCase= "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 assignTextToElement('h2','Ningún mensaje fue encontrado');
 assignTextToElement('p',"Ingresa el texto que desees desencriptar");
@@ -37,13 +39,64 @@ let cleanField = ()=>{
 }
 
 let captureMsg = ()=>{
+    console.log("Ingreso a la funcion");
     firstTextArea = document.getElementById('firstTextArea').value;
+    console.log(firstTextArea);
 
+    
+/*if(firstTextArea.includes(specialCharacteres)){
+    console.log("Debe ingresar el texto en minuscula");
+} */
         // Obtener el valor actual del textarea
         inputValue = firstTextArea;
 
         words = inputValue.split(" ");
-       
+
+       for (let i = 0; i < words.length; i++) {
+        for (let j = 0; j < specialCharacteres.length; j++) {
+            if (words[i].includes(specialCharacteres[j])) {
+                
+                  const Toast = Swal.mixin({
+                    toast: true,
+                    position: "center-left",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.onmouseenter = Swal.stopTimer;
+                      toast.onmouseleave = Swal.resumeTimer;
+                    }
+                  });
+                  Toast.fire({
+                    icon: "error",
+                    title: "Por favor No ingrese caracteres especiales"
+                  });
+              cleanField();
+              return;  
+            };
+            for (let k = 0; k < upperCase.length; k++) {
+            if (words[i].includes(upperCase[k])) {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "center-left",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.onmouseenter = Swal.stopTimer;
+                      toast.onmouseleave = Swal.resumeTimer;
+                    }
+                  });
+                  Toast.fire({
+                    icon: "error",
+                    title: "Por favor No ingrese letras Mayusculas"
+                  });
+                cleanField();
+                return;
+            }
+            }  
+        }
+    }
         if (words.length !== 0) {
             for (let i= 0; i < words.length; i++){
                              if (words[i].includes("a") || words[i].includes("e") || words[i].includes("i")|| words[i].includes("o") || words[i].includes("u")) {

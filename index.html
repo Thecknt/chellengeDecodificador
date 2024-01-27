@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <nav>
     
@@ -16,37 +17,38 @@
 <body>
     <div class="container">
         <div class="container-info" id="info">
-            <textarea placeholder="Ingrese su texto aqui" rows="4" cols="50" class="box center-text" id="firstTextArea"></textarea>
-
-            <div class="screen-info">
-                <img src="./images/Muñeco.png" alt="persona mirando con una lupa" srcset="" id="muñeco">
-                <textarea  placeholder="Ningun mensaje fue encontrado" rows="4" cols="50" class="boxDecrypt" style="display: none;"></textarea>
-                <h2 id="copyText"></h2>
-                <p></p>
-                
+            <textarea placeholder="Ingrese su texto aqui" rows="4" cols="50" class="box center-text"
+                id="firstTextArea"></textarea>
+            <div class="messageBox">
+                <h5><img src="./images/alta-importancia.png" class="exclamation">solo letras minúsculas y sin acentos</h5>
+    
+            </div>
+            <div class="buttons"><button class="Encriptar" id="encrypt">Encriptar</button>
+            <button class="desencriptar" id="decrypt">Desencriptar</button>
+        </div>    
+        </div>
+        <div class="screen-info">
+            <img src="./images/Muñeco.png" alt="persona mirando con una lupa" srcset="" id="muñeco">
+            <textarea placeholder="Ningun mensaje fue encontrado" rows="4" cols="50" class="boxDecrypt"
+                style="display: none;"></textarea>
+            <h2 id="copyText"></h2>
+            <p></p>
+            <div class="buttonCopy">
+                <button class="copiar right-button" style="display: none;" id="copy">copiar</button>
             </div>
         </div>
-        <div class="showMessageEncrypted" id="showMessageEncrypted">
-           
-        </div>
-        <div class="messageBox"> 
-           <p></p> <img src="./images/alta-importancia.png" class="exclamation">solo letras minúsculas y sin acentos</p>
-           
-        </div>
-       
-        <div class="buttons">
-            
-            <button class="Encriptar left-button" id="encrypt">Encriptar</button>
-            <button class="desencriptar left-button" id="decrypt">Desencriptar</button>
-            <button class="copiar right-button" style="display: none;" id="copy">copiar</button>
-        </div>
     </div>
-
-    <footer class="footer">
-    <p>Juego creado por Cristian Barreto® 2024</p>
-    <img src="" alt="" srcset="">
-    </footer>
+    
     <script src="./js/script.js"></script>
 </body>
-
+<footer class="footer">
+    <p>Juego creado por Cristian Barreto® 2024</p>
+    <div class="redesSociales">
+        <a href="https://github.com/Thecknt"><img src="./images/github.png" alt="imagen de acceso a github"
+                srcset=""></a>
+        <a href="https://www.linkedin.com/in/cristianrbarreto/"><img src="./images/linkedin.png"
+                alt="imagen de acceso a Linkedin" srcset=""></a>
+    </div>
+    
+</footer>
 </html>

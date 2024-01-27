@@ -2,16 +2,16 @@
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
-font-family: 'Montserrat', sans-serif;
+font-family: 'Montserrat', sans-serif
 }
 
 body{
-    background-color: white;
+    background-color: white
 
 }
 
 nav{
-    padding-top: 20px;
+    padding-top: 20px
 }
 
 .titleWeb{
@@ -19,7 +19,12 @@ nav{
     color: #0a3871;
     font-family:'Inter', sans-serif;
     text-align: left;
-    align-items: center;
+    align-items: center
+}
+
+.container{
+    display: flex;
+    height: 78vh
 }
 
 textarea::placeholder {
@@ -29,19 +34,19 @@ textarea::placeholder {
     line-height: 1.2;
     padding-top: 30px;
     padding-left: 0;
-    text-align: left;
+    text-align: left
 }
 
 textarea {
     height: 550px;
-    width: 870px;
+    width: 570px;
     overflow-wrap: break-word;
     font-family: 'Inter',sans-serif;
     font-size: 50px !important;
     letter-spacing: 0em;
     resize: none;
     padding-left: 70px;
-    line-height: 1.5;
+    line-height: 1.5
 }
 
 .center-text{
@@ -49,7 +54,7 @@ textarea {
     display: flex;
     text-align: center;
     justify-content: center;
-    padding-right: 10rem;
+    padding-right: 10rem
 }
 
 .box{
@@ -61,8 +66,7 @@ textarea {
     outline: none;
     vertical-align: top;
     color: #0a3871;
-    font-size: 20px;
-    margin-left: 60px;
+    font-size: 20px
 }
 
 .messageBox {
@@ -71,39 +75,36 @@ textarea {
     margin-left: 71px;
     margin-top: -50px;
     font-family: 'Inter',sans-serif;
-    font-size: 12px;
+    font-size: 22px;
     font-weight: 400;
     line-height: 18px;
     letter-spacing: 0em;
     text-align: left;
-    color: #495057;
+    color: #495057
 }
 
 .exclamation{
-margin-top: 15px;
+margin-top: 15px
 }
 
 .boxDecrypt{
 display: none;
 
 .screen-info{
-    display: none;
+    display: none
 }
+}
+
+.buttonCopy{
+    display: flex;
+    justify-content: center; /* Distribuye los elementos a lo largo del contenedor */
+   align-items: center;
+   margin-bottom: 10px
 }
 
 .buttons{
-    display: flex;
- /*   justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
-   /* align-items: center;*/
+    display: flex
 }
-
-.left-button {
-   display: flex; 
-  }
-
-  .right-buttons {
-    order: 1; /* Cambia el orden, coloca este botón primero */
-  }
 
 .Encriptar {
     margin-top: 15px;
@@ -116,7 +117,7 @@ display: none;
     background-color: #0a3871;
     border-radius: 8px;
     margin-right: 25px;
-    margin-left: 75px !important; 
+    margin-left: 75px !important 
 }
 
 .desencriptar {
@@ -128,29 +129,31 @@ display: none;
     border-radius: 8px;
     border-color: #0a3871;
     align-items: center;
-    justify-content: center;
+    justify-content: center
 }
 
 
 .copiar{
     width: 200px;
     height: 40px;
-    margin-top: 15px;
+    margin-bottom: 2px;
     background-color: white;
     font-family: 'Inter',sans-serif;
     color: #0a3871;
     border-radius: 8px;
     align-items: center;
-    justify-content:center;
-    margin-left: 650px;
+    justify-content:center
+
 }
 
 .screen-info{
     display: flex;
-    width: 900px;
-    justify-content: center;
+    width: 600px;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    margin-top: 99px;
+    margin-bottom: 7px
 }
 
 .screen-info h2{
@@ -160,7 +163,7 @@ display: none;
     font-weight: 700;
     line-height: 29px;
     letter-spacing: 0em;
-    text-align: center;
+    text-align: center
 }
 
 .screen-info p {
@@ -171,29 +174,642 @@ display: none;
     letter-spacing: 0em;
     text-align: center;
     color: #495057;
+    margin-bottom: 200px
 }
 
 .container-info{
 display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: baseline
 }
 
 .footer{
+    margin-top: 10px;
     display: flex;
+    flex-direction: column;
     text-align: center;
+    align-items: center;
     font-family: 'Inter',sans-serif;
     justify-content: center;
     background-color: white;
-    height: 60px;
-    margin-top: 40px;
+    height: 60px
 }
 
 .footer p{
     display: flex;
-    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     float: right;
     color: #0a3871;
     font-size:20px;
-    font-weight: bold;
+    font-weight: bold
+}
+
+.redesSociales{
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+@media screen and (max-width: 768px) {
+
+    .body{
+        width: 400px
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+        margin-left: auto
+        
+    }
+
+    .exclamation {
+        margin-top: 15px;
+        margin-left: 101px
+    }
+
+    textarea::placeholder {
+        color: #0a3871;
+        font-family: 'Inter', sans-serif;
+        font-size: 40px;
+        line-height: 1.2;
+        padding-top: 30px;
+        padding-left: 0;
+        text-align: center
+    }
+
+    textarea{
+        width: 570px;
+        overflow-wrap: break-word;
+        font-family: 'Inter',sans-serif;
+        font-size: 50px !important;
+        letter-spacing: 0em;
+        resize: none;
+        padding-left: 15px
+    }
+    
+    .container-info {
+         display: flex;
+         width: 89vw;
+         margin-top: 38px;
+         margin-left: 41px
+     }
+    
+     .screen-info img {
+         display: none
+     }
+
+     .messageBox{
+        margin-left: 5px
+     }
+
+     .buttons{
+        margin-left: 39px
+     }
+
+     .screen-info {
+        display: flex;
+        width: 600px;
+        flex-direction: column;
+        margin-top: 45px;
+        margin-left: 68px
+    }
+
+    .footer {
+        margin-top: 155px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        font-family: 'Inter',sans-serif;
+        justify-content: center;
+        background-color: white;
+        height: 60px
+    }
+}
+
+@media screen and (max-width: 790px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin-left: -67px
+    }
+
+    .buttons {
+        margin-left: 39px;
+        width: 500px
+    }
+
+    .footer p {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        float: right;
+        color: #0a3871;
+        font-size: 20px;
+        font-weight: bold;
+        width: 500px
+    }
+
+    .redesSociales {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left:-121px
+    }
+}
+
+@media screen and (max-width: 756px) {
+    .footer p {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        float: right;
+        color: #0a3871;
+        font-size: 20px;
+        font-weight: bold;
+        width: 500px;
+        margin-left: 95px
+    }
+
+    .redesSociales {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left:-121px
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin-left: -124px;
+    }
+
+    .container-info {
+        display: flex;
+        width: 89vw;
+        margin-top: 38px;
+        margin-left: 23px
+    }
+
+    .messageBox{
+        margin-left: 5px;
+        width: 460px
+     }
+
+     textarea::placeholder {
+        color: #0a3871;
+        font-family: 'Inter', sans-serif;
+        font-size: 35px;
+        line-height: 1.2;
+        padding-top: 30px;
+        padding-left: 0;
+        text-align: center
+    }
+
+    textarea {
+        width: 570px;
+        overflow-wrap: break-word;
+        font-family: 'Inter',sans-serif;
+        font-size: 30px !important;
+        letter-spacing: 0em;
+        resize: none;
+        padding-left: 15px;
+    }
+
+    .screen-info {
+        display: flex;
+        width: 534px;
+        flex-direction: column;
+        margin-top: 45px;
+        margin-left: 68px;
+        height: 300px;
+    }
+
+    .Encriptar {
+        margin-left: 66px !important;
+        width: 200px;
+    }
+
+    .buttonCopy {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+
+    .footer{
+        display: flex;
+        width: 489px;
+        padding-top: 100px;
+        justify-content: flex-end;
+        height: 200px
+    }
+    
+    .footer p {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        float: right;
+        color: #0a3871;
+        font-size: 20px;
+        font-weight: bold;
+        width: 500px;
+        margin-left: 63px;
+        
+    }
+
+    .redesSociales{
+        margin-left: -55px;
+    }
+}
+
+@media screen and (max-width: 495px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+        margin-left: auto
+    }
+
+    .exclamation {
+        margin-top: 15px;
+        margin-left: 12px
+    }
+
+    .messageBox{
+        margin-left: 5px;
+        width: 460px
+     }
+}
+
+@media screen and (max-width: 485px) {
+    nav {
+        padding-top: 20px;
+        margin-left: -29px
+    }
+
+    .screen-info {
+        display: flex;
+        width: 600px;
+        flex-direction: column;
+        margin-top: 52px;
+        margin-left: -50px;
+        height: 350px
+    }
+    
+    .body{
+        width: 400px
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+        margin-left: auto
+    }
+
+    .box{
+    margin-top: 20px;
+    height: 440px;
+    width: 352px;
+    margin-left: 145px;
+    line-height: 1.5;
+    border: none;
+    outline: none;
+    vertical-align: top;
+    color: #0a3871;
+    font-size: 20px
+    }
+
+    .exclamation {
+        margin-top: 15px;
+        margin-left: 18px
+    }
+
+    textarea::placeholder {
+        color: #0a3871;
+        font-family: 'Inter', sans-serif;
+        font-size: 40px;
+        line-height: 1.2;
+        padding-top: 30px;
+        padding-left: 0;
+        text-align: center
+    }
+
+    textarea{
+        width: 570px;
+        overflow-wrap: break-word;
+        font-family: 'Inter',sans-serif;
+        font-size: 45px !important;
+        letter-spacing: 0em;
+        resize: none;
+        padding-left: 0px
+    }
+    
+    .container-info {
+         display: flex;
+         width: 89vw;
+         margin-top: 38px;
+         margin-left: -82px
+     }
+    
+     .screen-info img {
+         display: none
+     }
+
+     .messageBox{
+        margin-left: 5px;
+        width: 428px
+     }
+
+     .Encriptar{
+        margin-left: -16px !important;
+        width: 188px
+     }
+
+     .buttons{
+        margin-left: 0
+     }
+
+     .screen-info {
+        display: flex;
+        width: 600px;
+        flex-direction: column;
+        margin-top: 52px;
+        margin-left: -86px
+    }
+
+    .screen-info h2{
+        margin-bottom: -63px
+    }
+
+    .screen-info p{
+        padding-top: 75px;
+        margin-bottom: 101px
+    }
+
+    .footer{
+        margin-top: 88px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        font-family: 'Inter',sans-serif;
+        justify-content: center;
+        background-color: white;
+        height: 100px
+    }
+}
+
+@media screen and (max-width: 485px){
+.screen-info {
+    display: flex;
+    width: 600px;
+    flex-direction: column;
+    margin-top: 52px;
+    margin-left: -86px;
+}
+}
+
+
+@media screen and (max-width: 414px) {
+    nav {
+        padding-top: 20px;
+        margin-left: -29px
+    }
+    
+    .body{
+        width: 400px
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        height: 90vh
+    }
+
+    .box{
+    margin-top: 20px;
+    height: 440px;
+    width: 352px !important;
+    margin-left: 96px;
+    line-height: 1.5;
+    border: none;
+    outline: none;
+    vertical-align: top;
+    color: #0a3871;
+    font-size: 20px
+    }
+
+    .exclamation {
+        margin-top: 15px;
+        margin-left: 18px
+    }
+
+    textarea::placeholder {
+        color: #0a3871;
+        font-family: 'Inter', sans-serif;
+        font-size: 40px;
+        line-height: 1.2;
+        padding-top: 30px;
+        padding-left: 0;
+        text-align: center
+    }
+
+    textarea{
+        width: 570px;
+        overflow-wrap: break-word;
+        font-family: 'Inter',sans-serif;
+        font-size: 45px !important;
+        letter-spacing: 0em;
+        resize: none;
+        padding-left: 0px
+    }
+    
+    .container-info {
+         display: flex;
+         width: 89vw;
+         margin-top: 38px;
+         margin-left: -82px
+     }
+    
+     .screen-info img {
+         display: none
+     }
+
+     .messageBox{
+        margin-left: 5px;
+        width: 428px
+     }
+
+     .Encriptar{
+        margin-left: -16px !important;
+        width: 188px
+     }
+
+     .buttons{
+        margin-left: 0
+     }
+
+     .screen-info {
+        display: flex;
+        width: 600px;
+        flex-direction: column;
+        margin-top: 52px;
+        margin-left: -85px
+    }
+
+    .screen-info h2{
+        margin-bottom: -63px
+    }
+
+    .screen-info p{
+        padding-top: 75px;
+        margin-bottom: 101px
+    }
+
+    .footer{
+        margin-top: 175px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        font-family: 'Inter',sans-serif;
+        justify-content: center;
+        background-color: white;
+        height: 100px
+    }
+
+    .redesSociales {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -15px
+    }
+}
+
+
+
+@media screen and (max-width: 375px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 120vh
+    }
+
+    .footer {
+        margin-top: 159px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        font-family: 'Inter',sans-serif;
+        justify-content: center;
+        background-color: white;
+        height: 100px;
+        padding-top: 83px
+}
+
+@media screen and (max-width: 320px) {
+
+    textarea::placeholder{
+        color: #0a3871;
+        font-family: 'Inter', sans-serif;
+        font-size: 40px;
+        line-height: 1.2;
+        padding-top: 30px;
+        padding-left: 0;
+        text-align: center
+    }
+    
+    textarea{
+        width: 400px;
+        overflow-wrap: break-word;
+        font-family: 'Inter',sans-serif;
+        font-size: 45px !important;
+        letter-spacing: 0em;
+        resize: none;
+        padding-left: 0px
+    }
+    .center-text{
+        align-items: center;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        padding-right: 2rem
+    }
+
+    .box {
+        margin-top: 20px;
+        height: 440px;
+        width: 285px;
+        margin-left: 96px;
+        line-height: 1.5;
+        border: none;
+        outline: none;
+        vertical-align: top;
+        color: #0a3871;
+        font-size: 20px
+    }
+
+    .messageBox {
+        margin-left: 0px;
+        width: 428px;
+    }
+
+    .buttons {
+        margin-left: 0;
+        width: 304px
+    }
+
+    .exclamation {
+        margin-top: 15px;
+        margin-left: -6px;
+    }
+
+    .Encriptar {
+        margin-left: 6px !important;
+        width: 213px;
+    }
+
+    .screen-info {
+        display: flex;
+        width: 496px;
+        flex-direction: column;
+        margin-top: 52px;
+        margin-left: -68px
+    }
+
+    .footer {
+        margin-top: 245px;
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        font-family: 'Inter',sans-serif;
+        justify-content: flex-end;
+        background-color: white;
+        height: 20vh;
+        padding-top: 140px
+    }
+
+        .footer p {
+            width: 396px;
+            margin-left: 0px;
+        }
+
+    .redesSociales{
+        margin-right: 45px;
+    }
+}
 }
