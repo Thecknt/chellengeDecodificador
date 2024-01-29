@@ -5,8 +5,8 @@ let buttonEncrypt = document.getElementById('encrypt');
 let buttonDecrypt = document.getElementById('decrypt');
 let buttonCopy=document.getElementById('copy');
 let copyText="";
-let firstTextArea="";
-let specialCharacteres= "!@#$%^&*()";
+let firstTextArea;
+let specialCharacteres= "=!@#$%^&*():{}";
 let upperCase= "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 assignTextToElement('h2','Ningún mensaje fue encontrado');
@@ -17,8 +17,28 @@ function assignTextToElement(element, text) {
     elementHTML.innerHTML = text;
 }
 
-buttonEncrypt.addEventListener('click', (e)=>{
+buttonEncrypt.addEventListener('click', ()=>{
+  inputValue = document.getElementById('firstTextArea').value;
+  console.log(inputValue);
+  if (inputValue.length == 0) {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "center-left",
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    });
+    Toast.fire({
+      icon: "error",
+      title: "Por favor debe Ingresar algun texto"
+    });
+  } else {
     captureMsg();
+  }
 })
 
 buttonCopy.addEventListener('click', (e)=>{
@@ -29,9 +49,44 @@ buttonCopy.addEventListener('click', (e)=>{
 })
 
 buttonDecrypt.addEventListener('click', (e)=>{
-    assignTextToElement('h2',inputValue);
+  inputValue = document.getElementById('firstTextArea').value;
+
+  if (inputValue.length == 0) {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "center-left",
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    });
+    Toast.fire({
+      icon: "error",
+      title: "Debe ingresar al menos algun texto"
+    });
+  } else {
+    words = inputValue.split(", ");
+    console.log(inputValue);
+      for (let i= 0; i < words.length; i++){
+                       if (words[i].includes("ai") || words[i].includes("enter") || words[i].includes("imes")|| words[i].includes("ober") || words[i].includes("ufat")) {
+                        words[i] = words[i].replace(/ai/g, "a"); //la g corresponde a una busqueda global de coincidencias
+                        words[i] = words[i].replace(/enter/g, "e");
+                        words[i] = words[i].replace(/imes/g, "i");
+                        words[i] = words[i].replace(/ober/g, "o");
+                        words[i] = words[i].replace(/ufat/g, "u");
+                          console.log("Dentro del ciclo for: "+words);
+                       }           
+      }
+      console.log(words);
+    assignTextToElement('h2',words);
     assignTextToElement('p',"Texto desencriptado!");
-    cleanField();
+      buttonCopy.style.display="flex";
+      cleanField();
+ 
+  }   
 })
 
 let cleanField = ()=>{
@@ -43,10 +98,6 @@ let captureMsg = ()=>{
     firstTextArea = document.getElementById('firstTextArea').value;
     console.log(firstTextArea);
 
-    
-/*if(firstTextArea.includes(specialCharacteres)){
-    console.log("Debe ingresar el texto en minuscula");
-} */
         // Obtener el valor actual del textarea
         inputValue = firstTextArea;
 

@@ -212,7 +212,54 @@ align-items: baseline
     align-items: center
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1366px) {
+    *{
+        margin-left: 10px;
+    }
+
+    body{
+        width: 750px
+    }
+
+    nav{
+        width: 750px
+    }
+
+    .titleWeb {
+        display: flex;
+        color: #0a3871;
+        font-family: 'Inter', sans-serif;
+        text-align: left;
+        align-items: center;
+        width: 750px
+    }
+
+    .container {
+        display: flex;
+        height: 78vh;
+        flex-direction: column;
+        width: 750px
+    }
+
+    .screen-info img {
+        display: none
+    }
+
+    .footer {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        font-family: 'Inter',sans-serif;
+        justify-content: center;
+        background-color: white;
+        height: 60px;
+        width: 750px
+    }
+}
+
+@media screen and (max-width: 1024px) {
 
     .body{
         width: 400px
@@ -242,7 +289,7 @@ align-items: baseline
     }
 
     textarea{
-        width: 570px;
+        width: 500px;
         overflow-wrap: break-word;
         font-family: 'Inter',sans-serif;
         font-size: 50px !important;
@@ -272,7 +319,7 @@ align-items: baseline
 
      .screen-info {
         display: flex;
-        width: 600px;
+        width: 559px;
         flex-direction: column;
         margin-top: 45px;
         margin-left: 68px
@@ -320,6 +367,146 @@ align-items: baseline
         justify-content: center;
         align-items: center;
         margin-left:-121px
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+*{
+    margin-left: 20px !important
+}
+
+.footer {
+    margin-top: 155px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    font-family: 'Inter',sans-serif;
+    justify-content: flex-end;
+    background-color: white;
+    height:200px
+}
+
+.redesSociales{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right:141px
+}
+
+.messageBox {
+    padding-left: 71px
+}
+}
+
+
+@media screen and (max-width: 756px) {
+
+    .footer p {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        float: right;
+        color: #0a3871;
+        font-size: 20px;
+        font-weight: bold;
+        width: 500px;
+        margin-left: 95px
+    }
+
+    .redesSociales {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left:-121px
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin-left: -124px;
+    }
+
+    .container-info {
+        display: flex;
+        width: 89vw;
+        margin-top: 38px;
+        margin-left: 23px
+    }
+
+    .messageBox{
+        margin-left: 5px;
+        width: 460px
+     }
+
+     textarea::placeholder {
+        color: #0a3871;
+        font-family: 'Inter', sans-serif;
+        font-size: 35px;
+        line-height: 1.2;
+        padding-top: 30px;
+        padding-left: 0;
+        text-align: center
+    }
+
+    textarea {
+        width: 570px;
+        overflow-wrap: break-word;
+        font-family: 'Inter',sans-serif;
+        font-size: 30px !important;
+        letter-spacing: 0em;
+        resize: none;
+        padding-left: 15px;
+    }
+
+    .screen-info {
+        display: flex;
+        width: 534px;
+        flex-direction: column;
+        margin-top: 45px;
+        margin-left: 68px;
+        height: 300px;
+    }
+
+    .Encriptar {
+        margin-left: 66px !important;
+        width: 200px;
+    }
+
+    .buttonCopy {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+
+    .footer{
+        display: flex;
+        width: 489px;
+        padding-top: 100px;
+        justify-content: flex-end;
+        height: 200px
+    }
+    
+    .footer p {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        float: right;
+        color: #0a3871;
+        font-size: 20px;
+        font-weight: bold;
+        width: 500px;
+        margin-left: 63px;
+        
+    }
+
+    .redesSociales{
+        margin-left: -55px;
     }
 }
 
