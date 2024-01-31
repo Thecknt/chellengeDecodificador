@@ -3,11 +3,20 @@ let image = document.getElementById('muñeco');
 let words = [];
 let buttonEncrypt = document.getElementById('encrypt');
 let buttonDecrypt = document.getElementById('decrypt');
-let buttonCopy=document.getElementById('copy');
-let copyText="";
+let buttonCopy = document.getElementById('copy');
+let copyText = "";
 let firstTextArea;
-let specialCharacteres= "=!@#$%^&*():{}";
-let upperCase= "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+let specialCharacteres = "!@#$%^&*():'";
+let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+let encryptedWords = [];
+
+let vowels = {
+  'a': 'ai',
+  'e': 'enter',
+  'i': 'imes',
+  'o': 'ober',
+  'u': 'ufat'
+};
 
 assignTextToElement('h2','Ningún mensaje fue encontrado');
 assignTextToElement('p',"Ingresa el texto que desees desencriptar");
@@ -20,7 +29,7 @@ function assignTextToElement(element, text) {
 buttonEncrypt.addEventListener('click', ()=>{
   inputValue = document.getElementById('firstTextArea').value;
   console.log(inputValue);
-  if (inputValue.length == 0) {
+  if (inputValue.length === 0) {
     const Toast = Swal.mixin({
       toast: true,
       position: "center-left",
@@ -37,21 +46,23 @@ buttonEncrypt.addEventListener('click', ()=>{
       title: "Por favor debe Ingresar algun texto"
     });
   } else {
-    captureMsg();
+    captureMsg(inputValue);
   }
 })
+let currentWord = [];
 
-buttonCopy.addEventListener('click', (e)=>{
+buttonCopy.addEventListener('click', ()=>{
     copyText = document.getElementById('copyText');
     navigator.clipboard.writeText(copyText.innerHTML);
     assignTextToElement('p',"Texto copiado!");
    cleanField();
 })
 
-buttonDecrypt.addEventListener('click', (e)=>{
+
+buttonDecrypt.addEventListener('click', ()=>{
   inputValue = document.getElementById('firstTextArea').value;
 
-  if (inputValue.length == 0) {
+  if (inputValue.length === 0) {
     const Toast = Swal.mixin({
       toast: true,
       position: "center-left",
@@ -67,40 +78,51 @@ buttonDecrypt.addEventListener('click', (e)=>{
       icon: "error",
       title: "Debe ingresar al menos algun texto"
     });
-  } else {
-    words = inputValue.split(", ");
-    console.log(inputValue);
-      for (let i= 0; i < words.length; i++){
-                       if (words[i].includes("ai") || words[i].includes("enter") || words[i].includes("imes")|| words[i].includes("ober") || words[i].includes("ufat")) {
-                        words[i] = words[i].replace(/ai/g, "a"); //la g corresponde a una busqueda global de coincidencias
-                        words[i] = words[i].replace(/enter/g, "e");
-                        words[i] = words[i].replace(/imes/g, "i");
-                        words[i] = words[i].replace(/ober/g, "o");
-                        words[i] = words[i].replace(/ufat/g, "u");
-                          console.log("Dentro del ciclo for: "+words);
-                       }           
-      }
-      console.log(words);
-    assignTextToElement('h2',words);
-    assignTextToElement('p',"Texto desencriptado!");
+  } 
+  let decryptedWords = []; // Aquí usamos un arreglo vacío
+      for (let i = 0; i < words.length; i++) {
+        let decrypt = words[i]
+            .replace(/(ai|enter|imes|ober|ufat)/g, function(letter) {
+                switch (letter) {
+                    case "ai":
+                        return "a";
+                    case "enter":
+                        return "e";
+                    case "imes":
+                        return "i";
+                    case "ober":
+                        return "o";
+                    case "ufat":
+                        return "u";
+                }
+            });
+
+        decryptedWords.push(decrypt); // Aquí podemos usar el método push sin problemas
+    }
+
+      image.style.display="none";
+   assignTextToElement('h2',decryptedWords.join(" ")); // Aquí usamos el método join para convertir el arreglo en una cadena
+   assignTextToElement('p',"Texto desencriptado!");
       buttonCopy.style.display="flex";
       cleanField();
- 
+
   }   
-})
+)
 
 let cleanField = ()=>{
     firstTextArea = document.getElementById('firstTextArea').value = "";
 }
 
+
+
 let captureMsg = ()=>{
     console.log("Ingreso a la funcion");
-    firstTextArea = document.getElementById('firstTextArea').value;
-    console.log(firstTextArea);
+    typeof(inputValue);
+    //firstTextArea = document.getElementById('firstTextArea').value;
+    console.log(inputValue);
+    
 
         // Obtener el valor actual del textarea
-        inputValue = firstTextArea;
-
         words = inputValue.split(" ");
 
        for (let i = 0; i < words.length; i++) {
@@ -148,35 +170,43 @@ let captureMsg = ()=>{
             }  
         }
     }
-        if (words.length !== 0) {
-            for (let i= 0; i < words.length; i++){
-                             if (words[i].includes("a") || words[i].includes("e") || words[i].includes("i")|| words[i].includes("o") || words[i].includes("u")) {
-                                words[i] = words[i].replace(/a/g, "ai"); //la g corresponde a una busqueda global de coincidencias
-                                words[i] = words[i].replace(/e/g, "enter");
-                                words[i] = words[i].replace(/i/g, "imes");
-                                words[i] = words[i].replace(/o/g, "ober");
-                                words[i] = words[i].replace(/u/g, "ufat");
-                                console.log("Dentro del ciclo for: "+words);
-                             }           
-            }
-   
-            showEncriptedMsg(words);
-            buttonCopy.style.display="flex";
-       }
-    
-}
 
+    if (words.length !== 0) {
+      for (let i = 0; i < words.length; i++) {
+          let encryptedWord = words[i]
+              .replace(/[aeiou]/g, function(letter) {
+                  switch (letter) {
+                      case "a":
+                          return "ai";
+                      case "e":
+                          return "enter";
+                      case "i":
+                          return "imes";
+                      case "o":
+                          return "ober";
+                      case "u":
+                          return "ufat";
+                  }
+              });
+  
+          encryptedWords.push(encryptedWord);
+      }
+} 
+      console.log("mensaje encriptado: " + encryptedWords);
+      showEncriptedMsg(encryptedWords);
+      buttonCopy.style.display = "flex";
+  }
 
         
-function showEncriptedMsg(words) {
-    let encriptedWords="";
-    for (let i = 0; i < words.length; i++) {
-        encriptedWords += words[i].replace(/,/g, " ") + " ";
-    }
-   
-        image.style.display="none";
-        assignTextToElement('h2',encriptedWords.trim()); //.trim() asi me elimina el ultimo espacio
-        assignTextToElement('p',"");
+function showEncriptedMsg(encryptedWords) {
+  let encriptedWords = "";
+  for (let i = 0; i < encryptedWords.length; i++) {
+      encriptedWords += encryptedWords[i].replace(/,/g, " ") + " ";
+  }
+
+  image.style.display = "none";
+  assignTextToElement('h2', encriptedWords.trim());
+  assignTextToElement('p', "");
 }
 
 
