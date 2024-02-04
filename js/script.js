@@ -47,6 +47,7 @@ buttonEncrypt.addEventListener('click', ()=>{
     });
   } else {
     captureMsg(inputValue);
+    cleanField();
   }
 })
 let currentWord = [];
