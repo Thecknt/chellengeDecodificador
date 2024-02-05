@@ -1662,7 +1662,7 @@ html{
      }
 
      .Encriptar{
-        margin-left: 54px;
+        margin-left: 32px;
         width: 300px
      }
 
@@ -1828,7 +1828,7 @@ html{
      }
 
      .Encriptar{
-        margin-left: -16px !important;
+        margin-left: 0px !important;
         width: 300px
      }
 
@@ -1979,7 +1979,7 @@ html{
      }
 
      .Encriptar{
-        margin-left: 66px !important;
+        margin-left: 30px !important;
         width: 300px
      }
 
