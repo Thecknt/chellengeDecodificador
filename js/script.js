@@ -64,7 +64,9 @@ buttonCopy.addEventListener('click', ()=>{
 buttonDecrypt.addEventListener('click', ()=>{
   inputValue = document.getElementById('firstTextArea').value;
 
-  if (inputValue.length === 0) {
+  console.log(inputValue);
+
+  if (inputValue.length == 0) {
     inputValue = "";
     const Toast = Swal.mixin({
       toast: true,
@@ -75,40 +77,46 @@ buttonDecrypt.addEventListener('click', ()=>{
       didOpen: (toast) => {
         toast.onmouseenter = Swal.stopTimer;
         toast.onmouseleave = Swal.resumeTimer;
-      }
+      },
     });
     Toast.fire({
       icon: "error",
-      title: "Debe ingresar al menos algun texto"
+      title: "Debe ingresar al menos algun texto",
     });
-  } else{
-  let decryptedWords = []; // Aquí usamos un arreglo vacío
-      for (let i = 0; i < words.length; i++) {
-        let decrypt = words[i]
-            .replace(/(ai|enter|imes|ober|ufat)/g, function(letter) {
-                switch (letter) {
-                    case "ai":
-                        return "a";
-                    case "enter":
-                        return "e";
-                    case "imes":
-                        return "i";
-                    case "ober":
-                        return "o";
-                    case "ufat":
-                        return "u";
-                }
-            });
+    cleanField();
+  } else {
 
-        decryptedWords.push(decrypt); // Aquí podemos usar el método push sin problemas
+    let decryptedWords = [];
+    words = inputValue.split(" ");
+
+    for (let i = 0; i < words.length; i++) {
+      let decrypt = words[i].replace(
+        /(ai|enter|imes|ober|ufat)/g,
+        function (letter) {
+          switch (letter) {
+            case "ai":
+              return "a";
+            case "enter":
+              return "e";
+            case "imes":
+              return "i";
+            case "ober":
+              return "o";
+            case "ufat":
+              return "u";
+          }
+        }
+      );
+
+      decryptedWords.push(decrypt);
+      image.style.display = "none";
+      assignTextToElement("h2", decryptedWords.join(" "));
+      assignTextToElement("p", "Texto desencriptado!");
+      buttonCopy.style.display = "flex";
+      
     }
-
-      image.style.display="none";
-   assignTextToElement('h2',decryptedWords.join(" ")); // Aquí usamos el método join para convertir el arreglo en una cadena
-   assignTextToElement('p',"Texto desencriptado!");
-      buttonCopy.style.display="flex";
-      cleanField();
   }
+  cleanField();
   }   
 )
 
@@ -117,15 +125,7 @@ let cleanField = ()=>{
 }
 
 
-
 let captureMsg = ()=>{
-    console.log("Ingreso a la funcion");
-    typeof(inputValue);
-    //firstTextArea = document.getElementById('firstTextArea').value;
-    console.log(inputValue);
-    
-
-        // Obtener el valor actual del textarea
         words = inputValue.split(" ");
 
        for (let i = 0; i < words.length; i++) {
