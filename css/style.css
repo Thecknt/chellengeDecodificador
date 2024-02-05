@@ -116,7 +116,7 @@ display: none;
     background-color: #0a3871;
     border-radius: 8px;
     margin-right: 25px;
-    margin-left: 75px !important 
+    margin-left: 75px
 }
 
 .desencriptar {
@@ -422,12 +422,33 @@ align-items: baseline
     }
 }
 
-
 @media screen and (max-width: 541px) {
+
+    body {
+        width: 500px;
+    }
+
+    nav{
+        width: 500px
+    }
+
+    .titleWeb{
+        display: flex;
+        color: #0a3871;
+        font-family: 'Inter', sans-serif;
+        text-align: left;
+        align-items: center;
+        width: 500px 
+    }
+
+    .logo{
+        margin-left: -82px
+    }
     .container {
         display: flex;
         flex-direction: column;
         margin-left: -124px;
+        width: 500px
     }
 
     .container-info {
@@ -437,9 +458,32 @@ align-items: baseline
         margin-left: 23px
     }
 
+    .box {
+        margin-top: 20px;
+        height: 440px;
+        line-height: 1.5;
+        margin-left: 2px;
+        border: none;
+        outline: none;
+        vertical-align: top;
+        color: #0a3871;
+        font-size: 20px;
+    }
+
     .messageBox{
         margin-left: 5px;
-        width: 460px
+        width: 478px
+     }
+
+     .exclamation{
+        margin-left: 20px
+     }
+
+     .center-text{
+        margin-right: 0;
+        width: 570px;
+        margin-left: 13px;
+        padding: 0
      }
 
      textarea::placeholder {
@@ -453,27 +497,49 @@ align-items: baseline
     }
 
     textarea {
-        width: 570px;
+        width: 500px;
         overflow-wrap: break-word;
         font-family: 'Inter',sans-serif;
         font-size: 30px !important;
         letter-spacing: 0em;
         resize: none;
-        padding-left: 15px;
+        padding-left: 5px;
     }
 
     .screen-info {
         display: flex;
-        width: 534px;
+        width: 500px;
         flex-direction: column;
         margin-top: 45px;
         margin-left: 68px;
         height: 300px;
     }
 
+    .buttons{
+        margin-left: 0;
+        padding-left: 0px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        width: 385px;
+        flex-direction: column
+     }
+
     .Encriptar {
-        margin-left: 66px !important;
-        width: 200px;
+        margin-left: 225px;
+        width: 300px;
+        height: 80px
+    }
+
+    .desencriptar {
+        width: 300px;
+        height: 80px;
+        font-family: 'Inter',sans-serif;
+        border-radius: 8px;
+        border-color: #0a3871;
+        margin-left: 199px
     }
 
     .buttonCopy {
@@ -506,7 +572,169 @@ align-items: baseline
     }
 
     .redesSociales{
-        margin-left: -55px;
+        margin-left: 55px;
+    }
+}
+
+@media screen and(min-width: 497px){
+    body {
+        width:413px
+        }
+
+    nav {
+        padding-top: 20px;
+        margin-left: -29px;
+        width: 0px;
+        }
+
+        .logo{
+            margin-left: 2px
+        }
+
+    .titleWeb {
+        display: flex;
+        color: #0a3871;
+        font-family: 'Inter', sans-serif;
+        text-align: left;
+        align-items: center;
+        width: 500px;
+        margin-left: -41px;
+        font-size: 30px
+    }
+    
+    .logo{
+        width: 83px;
+        margin-left: 41px
+    }
+    .body{
+        width: 400px;
+        min-height: 100vh
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        height: 110vh;
+        width: 470px;
+        padding-bottom: 50px
+    }
+
+    .box{
+    margin-top: 20px;
+    height: 440px;
+    width: 445px !important;
+    border: solid orange;
+    margin-left: 58px;
+    line-height: 1.5;
+    border: none;
+    outline: none;
+    vertical-align: top;
+    color: #0a3871;
+    font-size: 15px
+    }
+
+    .exclamation {
+        margin-top: 15px;
+        margin-left:22px
+    }
+
+    .buttonCopy{
+        margin-left: 167px
+    }
+
+    textarea::placeholder {
+        color: #0a3871;
+        font-family: 'Inter', sans-serif;
+        font-size: 30px;
+        line-height: 1.2;
+        padding-top: 30px;
+        padding-left: 0;
+        margin-right: 35px;
+        text-align: center
+    }
+
+    textarea{
+        width: 570px;
+        overflow-wrap: break-word;
+        font-family: 'Inter',sans-serif;
+        font-size: 45px !important;
+        letter-spacing: 0em;
+        resize: none;
+        padding-left: 0px
+    }
+    
+    .container-info {
+         display: flex;
+         width: 126vw;
+         margin-top: 38px;
+         margin-left: -42px
+     }
+    
+     .screen-info img {
+         display: none
+     }
+
+     .messageBox{
+        margin-left: 0;
+        width: 376px;
+        padding-left: 0px;
+     }
+
+     .Encriptar{
+        margin-left: -16px;
+        width: 300px
+     }
+
+     .buttons{
+        margin-left: 0;
+        padding-left: 0px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        width: 385px
+     }
+
+     .screen-info {
+        display: flex;
+        width: 507px;
+        flex-direction: column;
+        margin-top: 52px;
+        margin-left: -60px
+    }
+
+    .screen-info h2{
+        margin-bottom: -63px;
+        margin-left: 130px
+    }
+
+    .screen-info p{
+        padding-top: 75px;
+        margin-bottom: 101px;
+        margin-left: 125px;
+        font-size: 17px
+    }
+
+    .footer{
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        font-family: 'Inter',sans-serif;
+        justify-content: center;
+        background-color: white;
+        height: 10px;
+        width: 413px;
+        margin-left: 105px
+    }
+
+    .redesSociales {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 47px
     }
 }
 
@@ -654,6 +882,10 @@ html{
         padding-top: 20px;
         margin-left: -29px;
         width: 500px
+    }
+
+    .logo{
+        margin-left: 2px
     }
 
     .titleWeb{
