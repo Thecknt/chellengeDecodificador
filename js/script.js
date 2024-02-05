@@ -48,6 +48,7 @@ buttonEncrypt.addEventListener('click', ()=>{
   } else {
     captureMsg(inputValue);
     cleanField();
+    encryptedWords = [];
   }
 })
 let currentWord = [];
@@ -64,6 +65,7 @@ buttonDecrypt.addEventListener('click', ()=>{
   inputValue = document.getElementById('firstTextArea').value;
 
   if (inputValue.length === 0) {
+    inputValue = "";
     const Toast = Swal.mixin({
       toast: true,
       position: "center-left",
@@ -79,7 +81,7 @@ buttonDecrypt.addEventListener('click', ()=>{
       icon: "error",
       title: "Debe ingresar al menos algun texto"
     });
-  } 
+  } else{
   let decryptedWords = []; // Aquí usamos un arreglo vacío
       for (let i = 0; i < words.length; i++) {
         let decrypt = words[i]
@@ -106,7 +108,7 @@ buttonDecrypt.addEventListener('click', ()=>{
    assignTextToElement('p',"Texto desencriptado!");
       buttonCopy.style.display="flex";
       cleanField();
-
+  }
   }   
 )
 

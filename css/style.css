@@ -1109,18 +1109,18 @@ align-items: baseline
 
 @media screen and (max-width: 496px) {
 html{
-    width: 400px;
+    width: 490px;
 }
     * {
         margin-left: 15px;
     }
 
     body {
-        width: 400px
+        width: 490px
     }
 
     nav {
-        width: 400px;
+        width: 490px;
     }
 
     .titleWeb {
@@ -1129,11 +1129,11 @@ html{
         font-family: 'Inter', sans-serif;
         text-align: left;
         align-items: center;
-        width: 370px
+        width: 480px
     }
 
     .titleWeb h1{
-        width: 3500px;
+        width: 490px;
     }
 
     .logo{
@@ -1188,7 +1188,7 @@ html{
 
     .exclamation {
         margin-top: 15px;
-        margin-left: -9px
+        margin-left: -109px
     }
 
     .screen-info {
@@ -1202,7 +1202,7 @@ html{
 
     .messageBox{
         margin-left: 5px;
-        width: 384px
+        width: 490px
      }
 
      .buttons{
@@ -1214,7 +1214,7 @@ html{
      }
 
      .Encriptar {
-        margin-right: 58px;
+        margin-right: 34px;
         width: 302px;
         height: 72px
     }
