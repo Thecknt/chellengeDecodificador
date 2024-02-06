@@ -274,6 +274,10 @@ align-items: baseline
         color: #0a3871;
         font-size: 20px
     }
+
+    .text {
+    margin-bottom: -5px;
+    }
     
     .messageBox {
         display: flex;
