@@ -81,6 +81,10 @@ textarea {
     color: #495057
 }
 
+.text{
+    margin-bottom: -5px
+    }
+
 .exclamation{
 margin-top: 15px;
 margin-left: 100px
