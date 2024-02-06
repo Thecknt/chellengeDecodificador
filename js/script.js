@@ -6,7 +6,7 @@ let buttonDecrypt = document.getElementById('decrypt');
 let buttonCopy = document.getElementById('copy');
 let copyText = "";
 let firstTextArea;
-let specialCharacteres = "!áéíóú@#$%^&*():'";
+let specialCharacteres = "!áéíóú/+@#$%-^&*():'";
 let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 let encryptedWords = [];
 
